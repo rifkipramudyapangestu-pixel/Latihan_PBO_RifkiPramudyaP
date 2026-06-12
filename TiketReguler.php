@@ -56,14 +56,15 @@ class TiketReguler extends Tiket {
 
     /**
      * Implementasi abstract method hitungTotalHarga() dari parent class.
+     * (Polimorfisme - Method Overriding)
      * 
-     * Studio Reguler tidak memiliki biaya tambahan (multiplier 1x),
-     * sehingga total harga = harga dasar tiket * jumlah kursi.
+     * Studio Reguler menggunakan tarif standar murni tanpa biaya tambahan fasilitas.
+     * Rumus: Total Harga = jumlah_kursi * hargaDasarTiket
      *
-     * @return float Total harga tiket
+     * @return float Total harga tiket Reguler
      */
     public function hitungTotalHarga() {
-        return $this->hargaDasarTiket * $this->jumlah_kursi;
+        return $this->jumlah_kursi * $this->hargaDasarTiket;
     }
 
     /**

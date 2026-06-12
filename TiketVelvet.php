@@ -56,16 +56,18 @@ class TiketVelvet extends Tiket {
 
     /**
      * Implementasi abstract method hitungTotalHarga() dari parent class.
+     * (Polimorfisme - Method Overriding)
      * 
-     * Studio Velvet memiliki biaya tambahan (surcharge) sebesar 100% dari harga dasar
-     * karena fasilitas super premium seperti bantal-selimut dan layanan butler.
-     * Total harga = (harga dasar tiket * 2) * jumlah kursi.
+     * Studio Velvet dikenakan surcharge/biaya tambahan kelas premium
+     * sebesar 50% dari total harga dasar.
+     * Rumus: Total Harga = (jumlah_kursi * hargaDasarTiket) * 1.50
      *
      * @return float Total harga tiket Velvet
      */
     public function hitungTotalHarga() {
-        $surchargeVelvet = 2.0; // Biaya tambahan 100% untuk fasilitas Velvet (premium)
-        return ($this->hargaDasarTiket * $surchargeVelvet) * $this->jumlah_kursi;
+        // Surcharge 50% untuk fasilitas premium Velvet
+        $surchargeVelvet = 1.50;
+        return ($this->jumlah_kursi * $this->hargaDasarTiket) * $surchargeVelvet;
     }
 
     /**
@@ -90,8 +92,8 @@ class TiketVelvet extends Tiket {
              . "  Bantal & Selimut : " . $this->bantalSelimutPack . "\n"
              . "  Layanan Butler   : " . $this->layananButler . "\n"
              . "--------------------------------------------\n"
-             . "Surcharge Velvet : +100%\n"
-             . "TOTAL HARGA      : Rp " . number_format($this->hitungTotalHarga(), 2, ',', '.') . "\n"
+             . "Surcharge Premium : +50%\n"
+             . "TOTAL HARGA       : Rp " . number_format($this->hitungTotalHarga(), 2, ',', '.') . "\n"
              . "============================================\n";
     }
 }

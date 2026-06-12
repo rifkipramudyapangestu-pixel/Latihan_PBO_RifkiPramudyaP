@@ -56,16 +56,18 @@ class TiketImax extends Tiket {
 
     /**
      * Implementasi abstract method hitungTotalHarga() dari parent class.
+     * (Polimorfisme - Method Overriding)
      * 
-     * Studio IMAX memiliki biaya tambahan (surcharge) sebesar 50% dari harga dasar
-     * karena fasilitas premium seperti kacamata 3D dan efek gerak kursi.
-     * Total harga = (harga dasar tiket * 1.5) * jumlah kursi.
+     * Studio IMAX dikenakan biaya tambahan flat sebesar Rp35.000
+     * untuk teknologi proyeksi layar lebar IMAX dan audio immersive.
+     * Rumus: Total Harga = (jumlah_kursi * hargaDasarTiket) + 35000
      *
      * @return float Total harga tiket IMAX
      */
     public function hitungTotalHarga() {
-        $surchargeImax = 1.5; // Biaya tambahan 50% untuk fasilitas IMAX
-        return ($this->hargaDasarTiket * $surchargeImax) * $this->jumlah_kursi;
+        // Biaya tambahan flat Rp35.000 untuk teknologi IMAX
+        $biayaTambahanImax = 35000;
+        return ($this->jumlah_kursi * $this->hargaDasarTiket) + $biayaTambahanImax;
     }
 
     /**
@@ -90,8 +92,8 @@ class TiketImax extends Tiket {
              . "  Kacamata 3D ID   : " . $this->kacamata3DId . "\n"
              . "  Efek Gerak Fitur : " . $this->efekGerakFitur . "\n"
              . "--------------------------------------------\n"
-             . "Surcharge IMAX : +50%\n"
-             . "TOTAL HARGA    : Rp " . number_format($this->hitungTotalHarga(), 2, ',', '.') . "\n"
+             . "Biaya Tambahan IMAX : Rp 35.000 (flat)\n"
+             . "TOTAL HARGA         : Rp " . number_format($this->hitungTotalHarga(), 2, ',', '.') . "\n"
              . "============================================\n";
     }
 }
