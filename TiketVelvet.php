@@ -96,5 +96,15 @@ class TiketVelvet extends Tiket {
              . "TOTAL HARGA       : Rp " . number_format($this->hitungTotalHarga(), 2, ',', '.') . "\n"
              . "============================================\n";
     }
+
+    // =================================================================
+    // GETTER METHODS untuk properti private TiketVelvet (Enkapsulasi)
+    // =================================================================
+
+    /** @return string Paket bantal dan selimut */
+    public function getBantalSelimutPack() { return $this->bantalSelimutPack; }
+
+    /** @return string Layanan butler */
+    public function getLayananButler() { return $this->layananButler; }
 }
 ?>

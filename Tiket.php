@@ -54,5 +54,28 @@ abstract class Tiket {
      * karena fasilitas yang didapat dari tiket VIP dan Reguler pasti berbeda.
      */
     abstract public function tampilkanInformasiFasilitas();
+
+    // =================================================================
+    // GETTER METHODS (Enkapsulasi)
+    // =================================================================
+    // Method getter adalah cara aman untuk mengakses properti protected
+    // dari luar class. Ini menjaga agar data tetap terlindungi (read-only)
+    // tanpa bisa dimodifikasi secara langsung oleh kode di luar class.
+    // =================================================================
+
+    /** @return int ID tiket */
+    public function getId() { return $this->id_tiket; }
+
+    /** @return string Nama film */
+    public function getNamaFilm() { return $this->nama_film; }
+
+    /** @return string Jadwal tayang */
+    public function getJadwalTayang() { return $this->jadwal_tayang; }
+
+    /** @return int Jumlah kursi */
+    public function getJumlahKursi() { return $this->jumlah_kursi; }
+
+    /** @return float Harga dasar tiket */
+    public function getHargaDasarTiket() { return $this->hargaDasarTiket; }
 }
 ?>

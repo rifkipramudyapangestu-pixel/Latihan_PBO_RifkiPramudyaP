@@ -96,5 +96,15 @@ class TiketImax extends Tiket {
              . "TOTAL HARGA         : Rp " . number_format($this->hitungTotalHarga(), 2, ',', '.') . "\n"
              . "============================================\n";
     }
+
+    // =================================================================
+    // GETTER METHODS untuk properti private TiketImax (Enkapsulasi)
+    // =================================================================
+
+    /** @return string ID kacamata 3D */
+    public function getKacamata3DId() { return $this->kacamata3DId; }
+
+    /** @return string Fitur efek gerak kursi */
+    public function getEfekGerakFitur() { return $this->efekGerakFitur; }
 }
 ?>

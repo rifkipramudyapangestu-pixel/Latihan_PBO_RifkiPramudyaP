@@ -92,5 +92,15 @@ class TiketReguler extends Tiket {
              . "TOTAL HARGA    : Rp " . number_format($this->hitungTotalHarga(), 2, ',', '.') . "\n"
              . "============================================\n";
     }
+
+    // =================================================================
+    // GETTER METHODS untuk properti private TiketReguler (Enkapsulasi)
+    // =================================================================
+
+    /** @return string Tipe audio studio */
+    public function getTipeAudio() { return $this->tipeAudio; }
+
+    /** @return string Lokasi baris kursi */
+    public function getLokasiBaris() { return $this->lokasiBaris; }
 }
 ?>
